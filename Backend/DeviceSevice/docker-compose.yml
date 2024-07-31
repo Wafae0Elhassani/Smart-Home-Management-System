@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db-device:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: deviceDB
+    ports:
+      - '27017:27017'
+    volumes:
+      - device-data:/data/db
+
+  device-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '8085:8085'
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://db-device:27017/deviceDB
+    depends_on:
+      - db-device
+
+volumes:
+  device-data:
