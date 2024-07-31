@@ -18,6 +18,7 @@ public class DeviceMapper implements EntityMapper<DeviceDto, Device> {
         device.setDeviceType(dto.getDeviceType());
         device.setDeviceStatus(dto.getDeviceStatus());
         device.setDeviceLocation(dto.getDeviceLocation());
+        device.setSetting(dto.getSetting());
         return device;
     }
 
@@ -29,6 +30,7 @@ public class DeviceMapper implements EntityMapper<DeviceDto, Device> {
         deviceDto.setDeviceType(entity.getDeviceType());
         deviceDto.setDeviceStatus(entity.getDeviceStatus());
         deviceDto.setDeviceLocation(entity.getDeviceLocation());
+        deviceDto.setSetting(entity.getSetting());
         return deviceDto;
     }
 

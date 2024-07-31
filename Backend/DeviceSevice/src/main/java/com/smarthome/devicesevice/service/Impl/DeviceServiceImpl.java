@@ -3,7 +3,6 @@ package com.smarthome.devicesevice.service.Impl;
 import com.smarthome.devicesevice.dto.DeviceDto;
 import com.smarthome.devicesevice.entity.Device;
 import com.smarthome.devicesevice.enums.Location;
-import com.smarthome.devicesevice.enums.Status;
 import com.smarthome.devicesevice.enums.Type;
 import com.smarthome.devicesevice.mapper.Impl.DeviceMapper;
 import com.smarthome.devicesevice.repository.DeviceRepository;
@@ -63,7 +62,7 @@ public class DeviceServiceImpl implements DeviceService {
     }
 
     @Override
-    public Status getDeviceStatus(String deviceId) {
+    public String getDeviceStatus(String deviceId) {
         Device device = deviceRepository.findById(deviceId).orElse(null);
         assert device != null;
         return device.getDeviceStatus();

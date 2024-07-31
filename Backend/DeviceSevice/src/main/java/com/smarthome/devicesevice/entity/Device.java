@@ -1,17 +1,15 @@
 package com.smarthome.devicesevice.entity;
 
 import com.smarthome.devicesevice.enums.Location;
-import com.smarthome.devicesevice.enums.Status;
 import com.smarthome.devicesevice.enums.Type;
 import org.springframework.data.annotation.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
-import org.springframework.data.mongodb.core.mapping.FieldType;
+
+import java.util.Map;
 
 @Document(collection = "devices")
 @AllArgsConstructor
@@ -23,6 +21,7 @@ public class Device {
     private String id;
     private String deviceName;
     private Type deviceType;
-    private Status deviceStatus;
+    private String deviceStatus;
     private Location deviceLocation;
+    private Map<String, Object> setting;
 }

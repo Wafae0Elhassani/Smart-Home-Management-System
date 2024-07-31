@@ -2,12 +2,13 @@ package com.smarthome.devicesevice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.smarthome.devicesevice.enums.Location;
-import com.smarthome.devicesevice.enums.Status;
 import com.smarthome.devicesevice.enums.Type;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,8 +23,11 @@ public class DeviceDto {
     private Type deviceType;
 
     @JsonProperty("deviceStatus")
-    private Status deviceStatus;
+    private String deviceStatus;
 
     @JsonProperty("deviceLocation")
     private Location deviceLocation;
+
+    @JsonProperty("setting")
+    private Map<String, Object> setting;
 }
