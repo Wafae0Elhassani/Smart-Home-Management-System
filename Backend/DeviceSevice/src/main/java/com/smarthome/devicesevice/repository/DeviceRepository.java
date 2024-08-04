@@ -14,4 +14,8 @@ public interface DeviceRepository extends MongoRepository<Device, String> {
     List<Device> findByDeviceLocation(Location deviceLocation);
 
     List<Device> findByDeviceType(Type deviceType);
+
+    long countByDeviceLocation(Location deviceLocation);
+
+    long countByDeviceTypeAndDeviceLocation(Type type, Location location);
 }
