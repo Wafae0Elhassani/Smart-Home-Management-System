@@ -79,4 +79,19 @@ public class DeviceServiceImpl implements DeviceService {
         List<Device> deviceList = deviceRepository.findByDeviceType(deviceType);
         return deviceMapper.toDto(deviceList);
     }
+
+    @Override
+    public long countAllDevices() {
+        return deviceRepository.count();
+    }
+
+    @Override
+    public long countDevicesByLocation(Location deviceLocation) {
+        return deviceRepository.countByDeviceLocation(deviceLocation);
+    }
+
+    @Override
+    public long countDevicesByTypeAndLocation(Type type, Location location) {
+        return deviceRepository.countByDeviceTypeAndDeviceLocation(type, location);
+    }
 }

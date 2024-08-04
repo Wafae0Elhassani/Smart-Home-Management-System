@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 16px;
+    box-sizing: border-box;
+    /* Uncomment the background if needed */
+    /* background: url('../../../assets/icons/image.png') no-repeat; */
+    /* background-size: cover; */
+}
+
+.header {
+    width: 53%;
+    padding: 16px;
+    background-color: rgb(181, 148, 212);
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.header-left img {
+    width: 80px;
+    height: auto;
+    float: left;
+    margin-left: 15%;
+    margin-top: 3%;
+}
+
+.header-right {
+    text-align: right;
+    color: white;
+}
+
+.dashboard {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 800px;
+    justify-content: center;
+    margin-top: 16px;
+    position: relative;
+}
+
+.location-card-container {
+    width: calc(25% - 16px);
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: relative;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    cursor: pointer;
+}
+
+.location-card-container:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.icon-container img {
+    width: 40px;
+    height: 40px;
+}
+
+.location-info h3 {
+    margin: 8px 0;
+    font-size: 1.2em;
+}
+
+.location-info p {
+    margin: 0;
+    color: #666;
+}

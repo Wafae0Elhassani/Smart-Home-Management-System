@@ -16,4 +16,7 @@ public interface DeviceService {
     String getDeviceStatus(String deviceId);
     List<DeviceDto> getDevicesByLocation(Location deviceLocation);
     List<DeviceDto> getDevicesByType(Type deviceType);
+    long countAllDevices();
+    long countDevicesByLocation(Location deviceLocation);
+    long countDevicesByTypeAndLocation(Type type, Location location);
 }

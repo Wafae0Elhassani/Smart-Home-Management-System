@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="">
+        <h1>My Home</h1>
+    </div>
+    <div class="header">
+        <div class="header-left">
+            <img src="assets/icons/home.png" alt="Home icon">
+        </div>
+        <div class="header-right">
+            <h1>All Devices</h1>
+            <p>{{ totalDevices }}</p>
+        </div>
+    </div>
+    <div class="dashboard">
+        <div class="location-card-container" *ngFor="let device of devices" [routerLink]="['/deviceType', device.location]">
+            <div class="icon-container">
+                <img [src]="'assets/icons/' + device.location + '.png'" alt="{{device.location}} icon">
+            </div>
+            <div class="location-info">
+                <h3>{{ device.location }}</h3>
+                <p>{{ device.count }} devices</p>
+            </div>
+        </div>
+    </div>
+</div>

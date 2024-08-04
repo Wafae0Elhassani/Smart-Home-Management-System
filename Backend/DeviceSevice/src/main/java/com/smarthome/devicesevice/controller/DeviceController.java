@@ -79,5 +79,39 @@ public class DeviceController {
         return ResponseEntity.ok(deviceList);
     }
 
+    @GetMapping("/count")
+    public ResponseEntity<Long> countAllDevices() {
+        long count = deviceService.countAllDevices();
+        return ResponseEntity.ok(count);
+    }
+
+    @GetMapping("/count/location/{deviceLocation}")
+    public ResponseEntity<Long> countDevicesByLocation(@PathVariable String deviceLocation) {
+        Location location;
+        try {
+            location = Location.valueOf(deviceLocation.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(null);
+        }
+        long count = deviceService.countDevicesByLocation(location);
+        return ResponseEntity.ok(count);
+    }
+
+    @GetMapping("/count/location/{deviceLocation}/type/{deviceType}")
+    public ResponseEntity<Long> countDevicesByTypeAndLocation( @PathVariable String deviceLocation,
+            @PathVariable String deviceType) {
+        Type type;
+        Location location;
+
+        try {
+            type = Type.valueOf(deviceType.toUpperCase());
+            location = Location.valueOf(deviceLocation.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(null);
+        }
+
+        long count = deviceService.countDevicesByTypeAndLocation(type, location);
+        return ResponseEntity.ok(count);
+    }
 
 }
