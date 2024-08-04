@@ -1,5 +1,6 @@
 package com.smarthome.devicesevice.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.smarthome.devicesevice.enums.Location;
 import com.smarthome.devicesevice.enums.Type;
 import org.springframework.data.annotation.Id;
@@ -18,10 +19,22 @@ import java.util.Map;
 @Getter
 public class Device {
     @Id
+    @JsonProperty("id")
+
     private String id;
+    @JsonProperty("deviceName")
+
     private String deviceName;
+    @JsonProperty("deviceType")
+
     private Type deviceType;
+    @JsonProperty("deviceStatus")
+
     private String deviceStatus;
+    @JsonProperty("deviceLocation")
+
     private Location deviceLocation;
+    @JsonProperty("setting")
+
     private Map<String, Object> setting;
 }

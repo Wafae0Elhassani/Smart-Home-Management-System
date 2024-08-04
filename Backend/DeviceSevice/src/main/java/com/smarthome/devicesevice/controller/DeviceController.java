@@ -21,12 +21,16 @@ public class DeviceController {
 
     @PostMapping("/add")
     public ResponseEntity<DeviceDto> addDevice(@RequestBody DeviceDto deviceDto) {
+        System.out.println( deviceDto);
+        System.out.println("hello");
         DeviceDto savedDevice = deviceService.addDevice(deviceDto);
+
         return ResponseEntity.ok(savedDevice);
+
     }
 
-    @PostMapping("/update/{deviceId}")
-    public ResponseEntity<DeviceDto> updateDevice(@PathVariable String deviceId, @RequestBody DeviceDto deviceDto){
+    @PutMapping("/update/{deviceId}")
+    public ResponseEntity<DeviceDto> updateDevice(@PathVariable String deviceId, @RequestBody DeviceDto deviceDto) {
         DeviceDto updatedDevice = deviceService.updateDevice(deviceId, deviceDto);
         return ResponseEntity.ok(updatedDevice);
     }
