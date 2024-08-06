@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+
+.header {
+    width: 100%;
+    padding: 16px;
+
+    text-align: center;
+    border-bottom: 1px  #ccc;
+    box-sizing: border-box;
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    position: relative; 
+}
+
+.header-center .back-arrow {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 300px; 
+}
+
+.header-center .location-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.header-center .location-content img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 5px; 
+}
+
+.header-center .location-content h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.dashboard {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 800px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.location-card-container {
+    width: calc(25% - 16px);
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: relative;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    cursor: pointer;
+}
+
+.location-card-container:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.icon-container img {
+    width: 40px;
+    height: 40px;
+}
+
+.location-info h3 {
+    margin: 8px 0;
+    font-size: 1.2em;
+}
+
+.location-info p {
+    margin: 0;
+    color: #666;
+}

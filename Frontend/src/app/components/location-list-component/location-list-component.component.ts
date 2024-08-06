@@ -13,7 +13,6 @@ export class LocationListComponentComponent {
 
   totalDevices: number = 0;
   devicesByLocation: { [key: string]: number } = {};
-  //devicesByType: { [key: string]: number } = {};
 
   locations = Object.values(Location);
   devices: any[] = [];
@@ -23,6 +22,7 @@ export class LocationListComponentComponent {
     this.locations.forEach(location => {
       this.getDevicesByLocation(location);
     });
+
   }
 
   getTotalDevices(): void {
@@ -35,13 +35,9 @@ export class LocationListComponentComponent {
     this.deviceService.countDevicesByLocation(location).subscribe(count => {
       this.devicesByLocation[location] = count;
       this.devices.push({ location: location, count: count });
+     
     });
   }
 
-  /* getDevicesByType(type: string): void {
-    this.deviceService.countDevicesByType(type).subscribe(count => {
-      this.devicesByType[type] = count;
-    });
-  } */
 
 }

@@ -1,1 +1,23 @@
-<p>device-type-list-component works!</p>
+<div class="container">
+    <div class="header">
+        <div class="header-center">
+        <a [routerLink]="['']"> <img class="back-arrow" src="assets/icons/back.png" alt="Back arrow"> </a>
+            <div class="location-content">
+                <img [src]="'assets/icons/' + location + '.png'" alt="{{location}} icon">
+                <h1>{{location}}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="location-card-container" *ngFor="let device of devices">
+            <div class="icon-container">
+                <img [src]="'assets/icons/' + device.type + '.png'" alt="{{device.type}} icon">
+            </div>
+            <div class="location-info">
+                <h3>{{ device.type }}</h3>
+                <p>{{ device.count }} devices</p> 
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,9 +5,7 @@
     height: 100vh;
     padding: 16px;
     box-sizing: border-box;
-    /* Uncomment the background if needed */
-    /* background: url('../../../assets/icons/image.png') no-repeat; */
-    /* background-size: cover; */
+   
 }
 
 .header {
