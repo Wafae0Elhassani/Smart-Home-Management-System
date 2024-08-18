@@ -1,0 +1,41 @@
+<div class="lighting-control">
+    <div class="lighting-header">
+        <div *ngFor="let light of lights" class="light-item" [ngClass]="{'selected': selectedLight === light}"
+            (click)="selectLight(light)">
+            <div class="icon">
+                <img [src]="light.icon" alt="{{light.name}}" />
+            </div>
+            <span>{{ light.name }}</span>
+        </div>
+        <a [routerLink]="['']"> <img class="back-arrow" src="assets/icons/back.png" alt="Back arrow"> </a>
+    </div>
+
+    <div>
+        <h2 class="title">{{ selectedLight?.name }}</h2>
+        <button class="toggle-button" [ngClass]="{'on': isOn, 'off': !isOn}" (click)="toggleLight()">
+            {{ isOn ? 'ON' : 'OFF' }}
+        </button>
+
+    </div>
+
+    <div class="mode-selection">
+        <label>Mode </label>
+        <button *ngFor="let mode of modes" [ngClass]="{'active': selectedMode === mode}" (click)="selectMode(mode)">
+            {{ mode }}
+        </button>
+    </div>
+
+    <div class="intensity-control">
+        <label>Intensity</label>
+        <input type="range" min="0" max="100" (ngModel)="intensity" />
+    </div>
+
+    <div class="shades-selection">
+        <label>Shades</label>
+        <div class="shades">
+            <div *ngFor="let shade of shades" [ngStyle]="{'background-color': shade}" class="shade"
+                (click)="selectShade(shade)">
+            </div>
+        </div>
+    </div>
+</div>

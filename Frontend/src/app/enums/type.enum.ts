@@ -5,6 +5,5 @@ export enum type {
     DOOR_LOCK = "Door lock",
     SENSOR = "Sensor",
     PLUG = "Plug",
-    HVAC = "Hvac",
-    OTHER = "Other"
+    HVAC = "Hvac"
 }

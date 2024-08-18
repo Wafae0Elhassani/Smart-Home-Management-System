@@ -1,11 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
+.home h1 {
+    margin-top: 30px;
+    font-family: "DM Serif Text", serif;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.header-right h1,
+p {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     padding: 16px;
     box-sizing: border-box;
-   
 }
 
 .header {
@@ -15,6 +28,7 @@
     text-align: center;
     border-bottom: 1px solid #ccc;
     box-sizing: border-box;
+    margin-top: 50px;
 }
 
 .header-left img {
@@ -39,6 +53,7 @@
     justify-content: center;
     margin-top: 16px;
     position: relative;
+    margin-top: 50px;
 }
 
 .location-card-container {

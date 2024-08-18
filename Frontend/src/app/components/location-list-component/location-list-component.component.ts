@@ -35,7 +35,7 @@ export class LocationListComponentComponent {
     this.deviceService.countDevicesByLocation(location).subscribe(count => {
       this.devicesByLocation[location] = count;
       this.devices.push({ location: location, count: count });
-     
+
     });
   }
 

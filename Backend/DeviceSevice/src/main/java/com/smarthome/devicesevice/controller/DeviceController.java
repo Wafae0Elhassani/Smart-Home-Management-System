@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/device")
 public class DeviceController {
@@ -22,7 +22,6 @@ public class DeviceController {
     @PostMapping("/add")
     public ResponseEntity<DeviceDto> addDevice(@RequestBody DeviceDto deviceDto) {
         System.out.println( deviceDto);
-        System.out.println("hello");
         DeviceDto savedDevice = deviceService.addDevice(deviceDto);
 
         return ResponseEntity.ok(savedDevice);

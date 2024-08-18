@@ -1,0 +1,37 @@
+<div class="bootstrap-wrapper marg">
+    <div class="container mt">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="container text-center form">
+                    <h1 class="text-center">Add Device</h1>
+                    <form (ngSubmit)="onAddDevice()">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Name</mat-label>
+                            <input matInput type="text" placeholder="Enter device name" required
+                                [(ngModel)]="deviceName" name="deviceName">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Location</mat-label>
+                            <mat-select [(ngModel)]="location" name="location" required
+                                (selectionChange)="onLocationChange()">
+                                <mat-option *ngFor="let loc of locations" [value]="loc">{{ loc }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Type</mat-label>
+                            <mat-select [(ngModel)]="deviceType" name="deviceType" required>
+                                <mat-option *ngFor="let type of availableTypes" [value]="type">{{ type }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary" class="btn">Add Device</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

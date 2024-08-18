@@ -5,6 +5,5 @@ export enum Location {
     BATHROOM = "Bathroom",
     OFFICE = "Office",
     GARAGE = "Garage",
-    OUTDOOR = "Outdoor",
-    OTHER = "Other"
+    OUTDOOR = "Outdoor"
 }

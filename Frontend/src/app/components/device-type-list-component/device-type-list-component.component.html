@@ -10,7 +10,7 @@
     </div>
 
     <div class="dashboard">
-        <div class="location-card-container" *ngFor="let device of devices">
+        <div class="location-card-container" *ngFor="let device of devices" [routerLink]="['/control', device.type]">
             <div class="icon-container">
                 <img [src]="'assets/icons/' + device.type + '.png'" alt="{{device.type}} icon">
             </div>
