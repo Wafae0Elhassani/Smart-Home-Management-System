@@ -4,15 +4,39 @@ import { DeviceTypeListComponentComponent } from './components/device-type-list-
 import { LocationListComponentComponent } from './components/location-list-component/location-list-component.component';
 import { LightingControlComponent } from './components/lighting-control/lighting-control.component';
 import { AddDeviceComponent } from './components/add-device/add-device.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LoginComponent } from './components/login/login.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: LoginComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'Register',
+    component: RegisterComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'ForgotPassword',
+    component: ForgotPasswordComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'ResetPassword/:token',
+    component: ResetPasswordComponent,
+    pathMatch: 'full'
+  },
   {
     path: 'deviceType/:location',
     component: DeviceTypeListComponentComponent,
     pathMatch: 'full'
   },
   {
-    path: '',
+    path: 'home',
     component: LocationListComponentComponent,
     pathMatch: 'full'
   },

@@ -1,0 +1,36 @@
+<div class="bootstrap-wrapper marg">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-center form">
+                    <img class="img-fluid" width="100px" src="/assets/login.jpg" alt="">
+                    <h1 class="text-center">Login</h1>
+                    <form (ngSubmit)="onSubmit()">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="text" placeholder="Enter your email" required="true"
+                                [(ngModel)]="user.email" id="email" name="email">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter your password"
+                                required="true" [(ngModel)]="user.password" id="password" name="password">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary" class="btn">Sign in</button>
+                        </div>
+                        <div>
+                            <a href="ForgotPassword">Forgot password?</a>
+                        </div>
+                    </form>
+                </div>
+                <p class="text-center">New? <a href="Register">Join Now</a></p>
+            </div>
+        </div>
+    </div>
+</div>
